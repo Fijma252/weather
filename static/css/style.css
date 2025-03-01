@@ -1,0 +1,100 @@
+body {
+    transition:background 0.5s ease;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to bottom, #87CEFA, #4682B4); /* Небесно-голубой цвет сверху, темно-голубой снизу */
+    overflow: hidden;
+    position: relative;
+}
+.weather-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.city, .temp {
+    margin: 10px 0;
+}
+
+.search-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.search-form input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+}
+
+.search-form button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 220px;
+}
+
+.search-form button:hover {
+    background-color: #45a049;
+}
+
+/* Фоны для разных погодных условий */
+body.snow {
+    background: #0a3d62; /* Темно-синий для снега */
+}
+body.rain {
+    background: #2c3e50; /* Серый для дождя */
+}
+body.sunny {
+    background: #87CEEB; /* Голубой для солнца */
+}
+body.clouds {
+    background: #bdc3c7; /* Серый для облаков */
+}
+.weather-effects {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+/* Стили для снежинок */
+.snowflake {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: fall linear infinite;
+}
+/* Стили для капель дождя */
+.raindrop {
+    position: absolute;
+    background: #00BFFF;
+    width: 2px;
+    height: 15px;
+    animation: fall linear infinite;
+}
+/* Анимация падения */
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
